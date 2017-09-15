@@ -1,7 +1,6 @@
 package eventFlow.intfs;
 
-
-import eventFlow.events.BeginEvent;
+.common.distribute.demo.events.BeginEvent;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

@@ -1,27 +1,32 @@
 package eventFlow.servs;
 
-import eventFlow.events.UploadCompleteEvent;
-import eventFlow.events.UploadEvent;
-import eventFlow.intfs.UploadCompleteEventPublisher;
-import eventFlow.intfs.UploadEventHandler;
-import eventFlow.intfs.UploadEventRegister;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+.api.base.service.impl.LocalBaseServiceImpl;
+        .common.distribute.demo.events.UploadCompleteEvent;
+        .common.distribute.demo.events.UploadEvent;
+        .common.distribute.demo.intfs.*;
+        .common.distribute.demo.procs.ProcessManager;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>
  * @since 2017/9/13 - 16:22
  */
 @Service
-public class UploadHandlerService implements UploadEventHandler {
+public class UploadHandlerService extends LocalBaseServiceImpl implements UploadEventHandler {
 
     @Autowired
     private UploadEventRegister uploadEventRegister;
 
     @Autowired
     private UploadCompleteEventPublisher uploadCompleteEventPublisher;
+
+    private Map<String, Object> logs = new ConcurrentHashMap<>();
 
     @PostConstruct
     private void init() {
@@ -30,20 +35,15 @@ public class UploadHandlerService implements UploadEventHandler {
 
     @Override
     public void onUploadEvent(UploadEvent event) {
-        System.out.println("UploadHandlerService 正在上传文件...");
-//        sleep();
-        System.out.println("UploadHandlerService 上传文件完成，通知EndHandlerService");
+        logger.debug("UploadHandlerService 正在写操作日志!!!");
+        String proId = event.getProId();
+        logs.put(proId, "这是" + proId + "的日志");
+
+        logger.debug("UploadHandlerService 正在上传文件...");
+        logger.debug("UploadHandlerService 上传文件完成，通知EndHandlerService");
+        ProcessManager.setStepStatus(event.getProId(), "UploadStep", Boolean.TRUE);
+
         uploadCompleteEventPublisher.publish(new UploadCompleteEvent("UploadHandlerService", event.getProId(), event.getParams()));
     }
 
-    private void sleep() {
-        try {
-            for (int i = 2; i > 0; i--) {
-                Thread.sleep(1000L);
-                System.out.println("UploadHandlerService倒数, " + i + "...");
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }

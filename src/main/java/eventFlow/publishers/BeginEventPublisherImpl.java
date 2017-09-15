@@ -1,15 +1,15 @@
 package eventFlow.publishers;
 
-import eventFlow.events.BeginEvent;
-import eventFlow.intfs.BeginEventHandler;
-import eventFlow.intfs.BeginEventPublisher;
-import eventFlow.intfs.BeginEventRegister;
 import org.springframework.stereotype.Component;
-import util.MethodExecutor;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
+
+.api.base.util.MethodExecutor;
+        .common.distribute.demo.events.BeginEvent;
+        .common.distribute.demo.intfs.BeginEventHandler;
+        .common.distribute.demo.intfs.BeginEventPublisher;
+        .common.distribute.demo.intfs.BeginEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>
@@ -38,16 +38,10 @@ public class BeginEventPublisherImpl implements BeginEventPublisher, BeginEventR
 
     @Override
     public void publish(BeginEvent event) {
-        CountDownLatch latch = new CountDownLatch(handlers.entrySet().size());
         MethodExecutor<BeginEvent> executor;
         for (Map.Entry<BeginEventHandler, MethodExecutor<BeginEvent>> entry : handlers.entrySet()) {
             executor = entry.getValue();
-            executor.execRun(latch, event);
-        }
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            executor.execRun(null, event);
         }
     }
 }

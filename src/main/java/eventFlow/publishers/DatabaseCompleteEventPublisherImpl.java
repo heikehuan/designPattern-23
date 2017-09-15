@@ -1,14 +1,15 @@
 package eventFlow.publishers;
 
-import eventFlow.events.DatabaseCompleteEvent;
-import eventFlow.intfs.DatabaseCompleteEventHandler;
-import eventFlow.intfs.DatabaseCompleteEventPublisher;
-import eventFlow.intfs.DatabaseCompleteEventRegister;
 import org.springframework.stereotype.Component;
-import util.MethodExecutor;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+.api.base.util.MethodExecutor;
+        .common.distribute.demo.events.DatabaseCompleteEvent;
+        .common.distribute.demo.intfs.DatabaseCompleteEventHandler;
+        .common.distribute.demo.intfs.DatabaseCompleteEventPublisher;
+        .common.distribute.demo.intfs.DatabaseCompleteEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

@@ -1,7 +1,6 @@
 package eventFlow.intfs;
 
-
-import eventFlow.events.UploadCompleteEvent;
+.common.distribute.demo.events.UploadCompleteEvent;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

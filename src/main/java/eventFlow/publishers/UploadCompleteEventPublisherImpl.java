@@ -1,14 +1,15 @@
 package eventFlow.publishers;
 
-import eventFlow.events.UploadCompleteEvent;
-import eventFlow.intfs.UploadCompleteEventHandler;
-import eventFlow.intfs.UploadCompleteEventPublisher;
-import eventFlow.intfs.UploadCompleteEventRegister;
 import org.springframework.stereotype.Component;
-import util.MethodExecutor;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+.api.base.util.MethodExecutor;
+        .common.distribute.demo.events.UploadCompleteEvent;
+        .common.distribute.demo.intfs.UploadCompleteEventHandler;
+        .common.distribute.demo.intfs.UploadCompleteEventPublisher;
+        .common.distribute.demo.intfs.UploadCompleteEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

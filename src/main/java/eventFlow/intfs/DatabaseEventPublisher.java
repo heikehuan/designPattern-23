@@ -1,7 +1,6 @@
 package eventFlow.intfs;
 
-
-import eventFlow.events.DatabaseEvent;
+.common.distribute.demo.events.DatabaseEvent;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>
