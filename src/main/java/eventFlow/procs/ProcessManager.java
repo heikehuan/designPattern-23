@@ -13,7 +13,6 @@ public class ProcessManager {
 
     /**
      * 查询过程是否发生了错误
-     *
      * @param procId
      * @return
      */
@@ -32,7 +31,6 @@ public class ProcessManager {
      * 如果为false就表示该setp执行失败
      * 如果为true就表示该setp执行成功
      * 查询指定的steps是否都成功了
-     *
      * @param procId
      * @param steps
      * @return
@@ -53,7 +51,6 @@ public class ProcessManager {
      * 如果为false就表示该setp执行失败
      * 如果为true就表示该setp执行成功
      * 查询指定的steps是否有其中一步失败了
-     *
      * @param procId
      * @param steps
      * @return
@@ -73,7 +70,6 @@ public class ProcessManager {
 
     /**
      * 设置procId过程中指定的step的状态
-     *
      * @param procId
      * @param stepId
      * @param status
@@ -100,7 +96,6 @@ public class ProcessManager {
 
     /**
      * 删除procId指定的过程
-     *
      * @param procId
      */
     public static void removeProc(String procId) {

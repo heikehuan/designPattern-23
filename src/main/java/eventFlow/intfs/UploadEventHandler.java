@@ -1,6 +1,6 @@
 package eventFlow.intfs;
 
-.common.distribute.demo.events.UploadEvent;
+import com.ptmind.ptengine.common.distribute.demo.events.UploadEvent;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

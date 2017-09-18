@@ -1,15 +1,14 @@
 package eventFlow.publishers;
 
+import com.ptmind.ptengine.api.base.util.MethodExecutor;
+import com.ptmind.ptengine.common.distribute.demo.events.UploadCompleteEvent;
+import com.ptmind.ptengine.common.distribute.demo.intfs.UploadCompleteEventHandler;
+import com.ptmind.ptengine.common.distribute.demo.intfs.UploadCompleteEventPublisher;
+import com.ptmind.ptengine.common.distribute.demo.intfs.UploadCompleteEventRegister;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-.api.base.util.MethodExecutor;
-        .common.distribute.demo.events.UploadCompleteEvent;
-        .common.distribute.demo.intfs.UploadCompleteEventHandler;
-        .common.distribute.demo.intfs.UploadCompleteEventPublisher;
-        .common.distribute.demo.intfs.UploadCompleteEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

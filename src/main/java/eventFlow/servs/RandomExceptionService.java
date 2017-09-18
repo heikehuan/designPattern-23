@@ -1,21 +1,19 @@
 package eventFlow.servs;
 
+import com.ptmind.ptengine.api.base.service.impl.LocalBaseServiceImpl;
+import com.ptmind.ptengine.common.distribute.demo.events.DatabaseEvent;
+import com.ptmind.ptengine.common.distribute.demo.intfs.DatabaseEventHandler;
+import com.ptmind.ptengine.common.distribute.demo.intfs.DatabaseEventRegister;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.concurrent.ThreadLocalRandom;
-
-.api.base.service.impl.LocalBaseServiceImpl;
-        .common.distribute.demo.events.DatabaseEvent;
-        .common.distribute.demo.intfs.DatabaseEventHandler;
-        .common.distribute.demo.intfs.DatabaseEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>
  * @since 2017/9/14 - 14:43
  */
-@Service
+//@Service
 public class RandomExceptionService extends LocalBaseServiceImpl implements DatabaseEventHandler {
     @Autowired
     private DatabaseEventRegister databaseEventRegister;

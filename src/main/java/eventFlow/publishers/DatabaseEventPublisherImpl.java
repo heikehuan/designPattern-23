@@ -1,15 +1,14 @@
 package eventFlow.publishers;
 
+import com.ptmind.ptengine.api.base.util.MethodExecutor;
+import com.ptmind.ptengine.common.distribute.demo.events.DatabaseEvent;
+import com.ptmind.ptengine.common.distribute.demo.intfs.DatabaseEventHandler;
+import com.ptmind.ptengine.common.distribute.demo.intfs.DatabaseEventPublisher;
+import com.ptmind.ptengine.common.distribute.demo.intfs.DatabaseEventRegister;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-.api.base.util.MethodExecutor;
-        .common.distribute.demo.events.DatabaseEvent;
-        .common.distribute.demo.intfs.DatabaseEventHandler;
-        .common.distribute.demo.intfs.DatabaseEventPublisher;
-        .common.distribute.demo.intfs.DatabaseEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

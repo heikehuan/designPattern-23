@@ -1,15 +1,14 @@
 package eventFlow.publishers;
 
+import com.ptmind.ptengine.api.base.util.MethodExecutor;
+import com.ptmind.ptengine.common.distribute.demo.events.BeginEvent;
+import com.ptmind.ptengine.common.distribute.demo.intfs.BeginEventHandler;
+import com.ptmind.ptengine.common.distribute.demo.intfs.BeginEventPublisher;
+import com.ptmind.ptengine.common.distribute.demo.intfs.BeginEventRegister;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-.api.base.util.MethodExecutor;
-        .common.distribute.demo.events.BeginEvent;
-        .common.distribute.demo.intfs.BeginEventHandler;
-        .common.distribute.demo.intfs.BeginEventPublisher;
-        .common.distribute.demo.intfs.BeginEventRegister;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>

@@ -1,17 +1,16 @@
 package eventFlow.servs;
 
+import com.ptmind.ptengine.api.base.service.impl.LocalBaseServiceImpl;
+import com.ptmind.ptengine.common.distribute.demo.events.DatabaseCompleteEvent;
+import com.ptmind.ptengine.common.distribute.demo.events.DatabaseEvent;
+import com.ptmind.ptengine.common.distribute.demo.intfs.*;
+import com.ptmind.ptengine.common.distribute.demo.procs.ProcessManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-.api.base.service.impl.LocalBaseServiceImpl;
-        .common.distribute.demo.events.DatabaseCompleteEvent;
-        .common.distribute.demo.events.DatabaseEvent;
-        .common.distribute.demo.intfs.*;
-        .common.distribute.demo.procs.ProcessManager;
 
 /**
  * @author <a href="mailto:huanhuan.zhan@ptmind.com">詹欢欢</a>
@@ -35,12 +34,12 @@ public class DatabaseHandlerService extends LocalBaseServiceImpl implements Data
 
     @Override
     public void onDatabaseEvent(DatabaseEvent event) {
-        logger.debug("DatabaseHandlerService 正在写操作日志!!!");
+        logger.debug(event.getProId() + " DatabaseHandlerService 正在写操作日志!!!");
         String proId = event.getProId();
         logs.put(proId, "这是" + proId + "的日志");
 
-        logger.debug("DatabaseHandlerService 正在操作数据库...");
-        logger.debug("DatabaseHandlerService 操作数据库完成，通知EndHandlerService");
+        logger.debug(event.getProId() + " DatabaseHandlerService 正在操作数据库...");
+        logger.debug(event.getProId() + " DatabaseHandlerService 操作数据库完成，通知EndHandlerService");
         ProcessManager.setStepStatus(event.getProId(), "DatabaseStep", Boolean.TRUE);
 
         databaseCompleteEventPublisher.publish(new DatabaseCompleteEvent("DatabaseHandlerService", event.getProId(), event.getParams()));
